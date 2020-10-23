@@ -1,0 +1,27 @@
+@import "src/variables";
+
+.women-show {
+  background: url("https://preview.colorlib.com/theme/fashi/img/products/women-large.jpg") no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+}
+
+.productName {
+  font-size: 20px !important;
+}
+
+.productImage {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.types {
+  li {
+    margin: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: $secondary;
+  }
+}

@@ -1,1 +1,108 @@
-/* You can add global styles to this file, and also import other style files */
+// Add SASS theme customizations here..
+/*! `Custom` Bootstrap 4 theme */
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,400,500);
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+@import "variables";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import "~flag-icon-css/css/flag-icon.min.css";
+
+/* Animate.css */
+@import "~animate.css/animate.min";
+
+/* NgX Owl Carousel O */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+.mtFont {
+  &Roboto {
+    font-family: 'Roboto', sans-serif !important;
+    &Bold {
+      font-weight: bolder;
+    }
+    &Italic {
+      font-style: italic;
+      &Bold {
+        font-weight: bolder;
+      }
+    }
+  }
+}
+
+.mtCompany {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.mtIcon {
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+
+  &Btn {
+    font-size: 20px;
+
+    &Dark {
+      color: #f1f1f1;
+    }
+  }
+}
+
+.mtGlass {
+  opacity: 0.7;
+}
+
+.mtGlassHover {
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.mtBtnLink {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.mtBtn {
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  color: $color-mtBtn-text;
+  background-color: $color-mtBtn-background;
+  border: none;
+  border-radius: .4rem;
+  transition: $transition;
+  cursor: pointer;
+
+  span {
+    margin-left: 1rem;
+    transition: $transition;
+  }
+
+  &:hover,
+  &:active {
+    background-color: darken($color-mtBtn-background, 2%);
+
+    span {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.mtBorder {
+  border-color: #3b3b3b !important;
+  border-width: 2px !important;
+}
+
+.mtFeatureText {
+  background: #f1f1f1;
+  border-radius: 16px;
+  text-align: center;
+  color: $primary;
+}

@@ -1,0 +1,41 @@
+// VARIABLES
+$color-header: #0d0d0d;
+$color-text: #404040;
+
+$color-btn-text: #3363ff;
+$color-btn-background: #e6ecff;
+
+$transition: .2s;
+
+
+.card {
+  &__img {
+    display: block;
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 3rem 3rem;
+  }
+
+  &__header {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-header;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    line-height: 1.7;
+    color: darken($color-text, 1%);
+    margin-bottom: 2.5rem;
+  }
+
+  &:hover {
+    background-color: darken( #fff, 2%);
+  }
+}

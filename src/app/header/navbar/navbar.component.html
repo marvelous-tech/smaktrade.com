@@ -1,0 +1,32 @@
+<section class="text-light" id="mtNavBarBg">
+  <div class="container">
+    <div class="row font-weight-bolder">
+      <div class="col">
+        <ul class="nav nav-fill" [ngStyle]="{height: navBarHeight}">
+          <li ngbDropdown class="nav-item border-left border-right mtBorder">
+            <a href (click)="false" class="nav-link text-light p-0 m-0 mtCategoriesList"  [ngStyle]="{lineHeight: navBarHeight}"  ngbDropdownToggle>
+              <span class="mtIcon lnr lnr-menu"></span>
+              ALL CATEGORIES</a>
+            <div ngbDropdownMenu class="shadow-lg mtNavBarDropdown animate__animated animate__fadeIn animate__faster">
+              <a ngbDropdownItem>Knit</a>
+              <a ngbDropdownItem>Sweater</a>
+              <a ngbDropdownItem>Woven</a>
+            </div>
+          </li>
+          <li class="nav-item border-right mtBorder">
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">HOME</a>
+          </li>
+          <li class="nav-item border-right mtBorder">
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">COLLECTIONS</a>
+          </li>
+          <li class="nav-item border-right mtBorder">
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">ABOUT</a>
+          </li>
+          <li class="nav-item border-right mtBorder">
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
