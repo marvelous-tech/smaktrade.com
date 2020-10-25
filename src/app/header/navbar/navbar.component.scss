@@ -4,23 +4,3 @@
   background: #252525;
   font-family: 'Roboto', sans-serif;
 }
-
-.mtCategoriesList::after {
-  content: none !important;
-}
-
-.mtNavBarDropdown {
-  border-radius: 0;
-  width: 100%;
-  outline: none;
-  border: none;
-}
-
-.mtNavBarDropdown > a {
-  font-family: 'Quicksand', sans-serif;
-}
-
-.mtNavBarDropdown > a:hover {
-  background-color: $primary;
-  color: #f1f1f1;
-}

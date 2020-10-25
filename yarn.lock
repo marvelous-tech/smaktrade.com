@@ -1166,6 +1166,20 @@
     enhanced-resolve "4.3.0"
     webpack-sources "1.4.3"
 
+"@ngxs/devtools-plugin@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.7.0.tgz#5b6b3e63411da527fcee1e8280714e1b95a838c7"
+  integrity sha512-jjq91AbnnhzSm4QRUd7M0Y+HnUYnsSTVwUy8c1BsH8rGQ9c77xIveQaF2UBngPaDKQzTyzdVO2rV7twy3W2/fg==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/logger-plugin@^3.7.0":
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.7.0.tgz#a27d6bb27360fc2677773c57868740b8cd33cc41"
+  integrity sha512-yr3NXXJEqJnxSuKiHaTbNmoprKKcrIS1PUIlOm9nvKsOmyrGskxu+MYCzUifemXDIyXSP2u0OBNPrVUumcXyhg==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/store@^3.7.0":
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.7.0.tgz#e46387219dae610c685accc119ae42e351afcaa4"
@@ -4454,6 +4468,11 @@ immediate@~3.0.5:
   version "3.0.6"
   resolved "https://registry.yarnpkg.com/immediate/-/immediate-3.0.6.tgz#9db1dbd0faf8de6fbe0f5dd5e56bb606280de69b"
   integrity sha1-nbHb0Pr43m++D13V5Wu2BigN5ps=
+
+immer@^7.0.14:
+  version "7.0.14"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.14.tgz#3e605f8584b15a9520d2f2f3fda9441cc9170d25"
+  integrity sha512-BxCs6pJwhgSEUEOZjywW7OA8DXVzfHjkBelSEl0A+nEu0+zS4cFVdNOONvt55N4WOm8Pu4xqSPYxhm1Lv2iBBA==
 
 import-cwd@^2.0.0:
   version "2.1.0"

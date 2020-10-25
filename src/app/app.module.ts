@@ -23,6 +23,13 @@ import { BannerComponent } from './home/banner/banner.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { ContactFormComponent } from './home/contact-form/contact-form.component';
 import { ShowcaseComponent } from './home/showcase/showcase.component';
+import { ProductsComponent } from './products/products.component';
+import { ContactComponent } from './contact/contact.component';
+import {HttpClientModule} from "@angular/common/http";
+import {NgxsModule} from "@ngxs/store";
+import {ProductState} from "../store/states/productState";
+import {NgxsLoggerPluginModule} from "@ngxs/logger-plugin";
+import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 
 @NgModule({
   declarations: [
@@ -43,14 +50,23 @@ import { ShowcaseComponent } from './home/showcase/showcase.component';
     BannerComponent,
     DeveloperComponent,
     ContactFormComponent,
-    ShowcaseComponent
+    ShowcaseComponent,
+    ProductsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     NgbModule,
-    CarouselModule
+    CarouselModule,
+    HttpClientModule,
+    NgxsModule.forRoot(
+      [ProductState],
+      {developmentMode: false}
+    ),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

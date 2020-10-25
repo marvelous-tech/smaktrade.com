@@ -4,26 +4,34 @@
       <div class="col">
         <ul class="nav nav-fill" [ngStyle]="{height: navBarHeight}">
           <li ngbDropdown class="nav-item border-left border-right mtBorder">
-            <a href (click)="false" class="nav-link text-light p-0 m-0 mtCategoriesList"  [ngStyle]="{lineHeight: navBarHeight}"  ngbDropdownToggle>
+            <a href (click)="false" class="nav-link text-light p-0 m-0 mtDropdownNoDropIcon"
+               [ngStyle]="{lineHeight: navBarHeight}" ngbDropdownToggle>
               <span class="mtIcon lnr lnr-menu"></span>
               ALL CATEGORIES</a>
             <div ngbDropdownMenu class="shadow-lg mtNavBarDropdown animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem>Knit</a>
               <a ngbDropdownItem>Sweater</a>
+              <a ngbDropdownItem>Knit</a>
               <a ngbDropdownItem>Woven</a>
+              <div class="dropdown-divider"></div>
+              <a ngbDropdownItem>Men's</a>
+              <a ngbDropdownItem>Women's</a>
+              <a ngbDropdownItem>Kid's</a>
             </div>
           </li>
           <li class="nav-item border-right mtBorder">
-            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">HOME</a>
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink=""
+               routerLinkActive="active">HOME</a>
           </li>
           <li class="nav-item border-right mtBorder">
-            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">COLLECTIONS</a>
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/collections"
+               routerLinkActive="active">COLLECTIONS</a>
           </li>
           <li class="nav-item border-right mtBorder">
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">ABOUT</a>
           </li>
           <li class="nav-item border-right mtBorder">
-            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">CONTACT</a>
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/contact"
+               routerLinkActive="active">CONTACT</a>
           </li>
         </ul>
       </div>
