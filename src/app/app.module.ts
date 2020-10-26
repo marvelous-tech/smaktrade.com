@@ -30,6 +30,8 @@ import {NgxsModule} from "@ngxs/store";
 import {ProductState} from "../store/states/productState";
 import {NgxsLoggerPluginModule} from "@ngxs/logger-plugin";
 import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
+import { ImageShowComponent } from './products/image-show/image-show.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -52,11 +54,13 @@ import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
     ContactFormComponent,
     ShowcaseComponent,
     ProductsComponent,
-    ContactComponent
+    ContactComponent,
+    ImageShowComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule,
     CarouselModule,

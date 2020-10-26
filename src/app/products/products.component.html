@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <label for="search"></label>
+      <input type="text" class="form-control" placeholder="Search items" id="search" (keyup)="onSearch($event)">
+    </div>
+  </div>
+  <div class="row my-1" *ngIf="(products$ | async).length > 0;else loading">
+    <div class="col-12 mt-2" *ngIf="(products$ | async).length > 0">
+      <p class="small text-muted font-weight-bold">Total {{ (products$ | async).length }} products</p>
+    </div>
+    <div class="col-lg-4 col-md-4 col-xl-4 col-sm-6" *ngFor="let product of products$ | async">
+      <div class="product mt-3 p-2 rounded-lg border d-flex flex-column justify-content-end"
+           >
+        <div class="image"
+             [ngStyle]='{
+            background: "url(" + product.image_url + ") no-repeat",
+            minHeight: "350px",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
+            backgroundSize: "300px"}
+              '></div>
+        <div class="height" style="min-height: 8px"></div>
+        <p class="small font-weight-bold text-center text-primary">PID.{{product.pin}}</p>
+        <p class="small text-center text-primary">{{product.product}} - {{product.category === "KidBoy" ? "Kid's Boy's" : (product.category == "KidGirl" ? "Kid's Girl's" : product.category)}} - {{product.type}}</p>
+      </div>
+
+    </div>
+  </div>
+  <ng-template class="loading" #loading>
+    <div class="row">
+      <div class="col-12 text-center p-5">
+        Loading...
+      </div>
+    </div>
+  </ng-template>
+</div>

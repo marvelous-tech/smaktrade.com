@@ -9,32 +9,41 @@
           </div>
         </div>
         <div class="col-lg-6">
+          <div class="alert alert-danger" role="alert" *ngIf="error">
+            Please give us at lease your <b>name</b>, <b>email</b> and <b>message</b>.
+          </div>
+          <div class="alert alert-primary" role="alert" *ngIf="sending">
+            We are submitting...
+          </div>
+          <div class="alert alert-success" role="alert" *ngIf="sent">
+            Your valuable message has been sent to us. We are really glad to know that.
+          </div>
           <div class="contact-box ml-3">
             <h1 class="mt-2 mtFontRobotoBold">Quick Contact</h1>
             <form class="mt-4">
               <div class="row">
                 <div class="col-lg-12">
                   <div class="form-group mt-2">
-                    <input class="form-control" type="text" placeholder="name">
+                    <input class="form-control" required type="text" placeholder="name" [(ngModel)]="name" name="name">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group mt-2">
-                    <input class="form-control" type="email" placeholder="email address">
+                    <input class="form-control" required type="email" placeholder="email address" [(ngModel)]="email" name="email">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group mt-2">
-                    <input class="form-control" type="text" placeholder="phone">
+                    <input class="form-control" type="text" placeholder="phone" [(ngModel)]="phone" name="phone">
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-group mt-2">
-                    <textarea class="form-control" rows="3" placeholder="message"></textarea>
+                    <textarea class="form-control" required rows="3" placeholder="message" [(ngModel)]="message" name="message"></textarea>
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <button type="submit" class="btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2"><span> SUBMIT</span></button>
+                  <button type="submit" (click)="onSubmit()" class="btn btn-danger-gradiant mt-3 text-white border-0 px-3 py-2"><span> SUBMIT</span></button>
                 </div>
               </div>
             </form>
