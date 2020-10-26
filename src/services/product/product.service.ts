@@ -12,8 +12,7 @@ export class ProductService {
   constructor(private _http: HttpClient) { }
 
   fetchProducts(filters: {pin: string, product: string, category: string, type: string, search: string}): Observable<Product[]> {
-
-    return this._http.get<Product[]>(PRODUCT_API_URL, {
+    return this._http.get<Product[]>(PRODUCT_API_URL + '/products/', {
         params: {
           product: filters.product,
           category: filters.category,
@@ -22,5 +21,17 @@ export class ProductService {
         }
       }
     );
+  }
+
+  fetchProduct(pin: string): Observable<Product> {
+    return this._http.get<Product>(PRODUCT_API_URL + "/" + pin + "/");
+  }
+
+  fetchRelevant(filterString: string): Observable<Product[]> {
+    return this._http.get<Product[]>(PRODUCT_API_URL + '/relevant/', {
+      params: {
+        product_category_type: filterString
+      }
+    })
   }
 }

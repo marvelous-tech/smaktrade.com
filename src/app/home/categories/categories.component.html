@@ -12,9 +12,18 @@
           <div ngbDropdown>
             <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic1" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem>Men's</a>
-              <a ngbDropdownItem>Women's</a>
-              <a ngbDropdownItem>Kid's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Men', product: 'Sweater'}"
+              >Men's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Women', product: 'Sweater'}"
+              >Women's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{search: 'Kid', product: 'Sweater'}"
+              >Kid's</a>
             </div>
           </div>
         </div>
@@ -27,9 +36,18 @@
           <div ngbDropdown>
             <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic2" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem>Men's</a>
-              <a ngbDropdownItem>Women's</a>
-              <a ngbDropdownItem>Kid's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Men', product: 'Knit'}"
+              >Men's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Women', product: 'Knit'}"
+              >Women's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{search: 'Kid', product: 'Knit'}"
+              >Kid's</a>
             </div>
           </div>
         </div>
@@ -42,9 +60,18 @@
           <div ngbDropdown>
             <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic3" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem>Men's</a>
-              <a ngbDropdownItem>Women's</a>
-              <a ngbDropdownItem>Kid's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Men', product: 'Woven'}"
+              >Men's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Women', product: 'Woven'}"
+              >Women's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{search: 'Kid', product: 'Woven'}"
+              >Kid's</a>
             </div>
           </div>
         </div>

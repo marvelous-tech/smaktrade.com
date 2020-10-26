@@ -1,37 +1,94 @@
-<div class="container">
+<button (click)="scrollToTop()" class="btn btn-primary rounded-circle shadow-lg top">
+  <span class="lnr lnr-chevron-up"></span>
+</button>
+
+<div class="container-fluid mb-3">
   <div class="row">
-    <div class="col-12">
+    <div class="col-lg-7"></div>
+    <div class="col-lg-5">
       <label for="search"></label>
-      <input type="text" class="form-control" placeholder="Search items" id="search" (keyup)="onSearch($event)">
+      <input type="text" class="form-control" placeholder="Search items" id="search" (keyup)="onSearch($event)" [ngModel]="searchString">
     </div>
   </div>
-  <div class="row my-1" *ngIf="(products$ | async).length > 0;else loading">
-    <div class="col-12 mt-2" *ngIf="(products$ | async).length > 0">
-      <p class="small text-muted font-weight-bold">Total {{ (products$ | async).length }} products</p>
+  <div class="row">
+    <div class="col-lg-2 filters">
+      <label for="selectProduct">Product</label>
+      <select class="custom-select" id="selectProduct" (change)="onFilterProduct($event)">
+        <option selected value="">All</option>
+        <option value="Sweater">Sweater</option>
+        <option value="Knit">Knit</option>
+        <option value="Woven">Woven</option>
+      </select>
+      <label for="selectCategory">Category</label>
+      <select class="custom-select" id="selectCategory" (change)="onFilterCategory($event)">
+        <option selected value="">All</option>
+        <option value="Men">Men's</option>
+        <option value="Women">Women's</option>
+        <option value="KidBoy">Boy's</option>
+        <option value="KidGirl">Girl's</option>
+      </select>
+      <hr>
+      <label for="selectSweater">Sweater Types</label>
+      <select class="custom-select" id="selectSweater" (change)="onFilterTypes($event)" [ngModel]="type">
+        <option selected value="">All</option>
+        <option value="Pullover">Pullover</option>
+        <option value="Cardigan">Cardigan</option>
+      </select>
+      <label for="selectKnit">Knit Types</label>
+      <select class="custom-select" id="selectKnit" (change)="onFilterTypes($event)" [ngModel]="type">
+        <option selected value="">All</option>
+        <option value="TShirt">T-Shirt</option>
+        <option value="Polo">Polo</option>
+        <option value="Jacket">Jacket</option>
+        <option value="Trouser">Trouser</option>
+      </select>
+      <label for="selectWoven">Woven Types</label>
+      <select class="custom-select" id="selectWoven" (change)="onFilterTypes($event)" [ngModel]="type">
+        <option selected value="">All</option>
+        <option value="Shirt">Shirt</option>
+        <option value="Denim">Denim</option>
+        <option value="Jacket">Jacket</option>
+        <option value="Pant">Pant</option>
+      </select>
+      <hr>
+      <button class="mtBtn btn-block" (click)="onReset()">Reset</button>
     </div>
-    <div class="col-lg-4 col-md-4 col-xl-4 col-sm-6" *ngFor="let product of products$ | async">
-      <div class="product mt-3 p-2 rounded-lg border d-flex flex-column justify-content-end"
-           >
-        <div class="image"
-             [ngStyle]='{
+    <div class="col-lg-10">
+      <div *ngIf="!isLoading;else loading">
+        <div class="col-12 mt-4" *ngIf="(products$ | async).length > 0;else zero;">
+          <p class="small text-muted font-weight-bold">Total {{ (products$ | async).length }} products</p>
+        </div>
+        <ng-template #zero>
+          <div class="col-12 mt-4">
+            <p class="small text-muted font-weight-bold">No products are found right now.</p>
+          </div>
+        </ng-template>
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-xl-4 col-sm-6" *ngFor="let product of products$ | async">
+            <div class="product mt-3 p-2 rounded-lg border d-flex flex-column justify-content-end"
+            >
+              <div class="image"
+                   [ngStyle]='{
             background: "url(" + product.image_url + ") no-repeat",
             minHeight: "350px",
             backgroundPositionX: "center",
             backgroundPositionY: "center",
             backgroundSize: "300px"}
-              '></div>
-        <div class="height" style="min-height: 8px"></div>
-        <p class="small font-weight-bold text-center text-primary">PID.{{product.pin}}</p>
-        <p class="small text-center text-primary">{{product.product}} - {{product.category === "KidBoy" ? "Kid's Boy's" : (product.category == "KidGirl" ? "Kid's Girl's" : product.category)}} - {{product.type}}</p>
+              ' [routerLink]="['/collections', product.pin]"></div>
+              <div class="height" style="min-height: 8px"></div>
+              <p class="small font-weight-bold text-center text-primary">PID.{{product.pin}}</p>
+              <p class="small text-center text-primary">{{product.product}} - {{product.category === "KidBoy" ? "Kid's Boy's" : (product.category == "KidGirl" ? "Kid's Girl's" : product.category)}} - {{product.type}}</p>
+            </div>
+          </div>
+        </div>
       </div>
-
+      <ng-template class="loading" #loading>
+        <div class="row">
+          <div class="col-12 text-center p-5">
+            Loading...
+          </div>
+        </div>
+      </ng-template>
     </div>
   </div>
-  <ng-template class="loading" #loading>
-    <div class="row">
-      <div class="col-12 text-center p-5">
-        Loading...
-      </div>
-    </div>
-  </ng-template>
 </div>

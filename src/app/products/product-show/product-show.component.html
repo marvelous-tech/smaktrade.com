@@ -1,0 +1,73 @@
+<button (click)="scrollToImageElement()" class="btn btn-light rounded-circle shadow-lg top text-dark">
+  <span class="lnr lnr-chevron-up"></span>
+</button>
+<div class="bg-dark">
+  <div class="container">
+    <div class="row text-center justify-content-center">
+      <div class="col-6" *ngIf="$product | async">
+        <img id="image" class="mt-5 mb-3 img-fluid img-thumbnail" [src]="($product | async).image_url" alt="No image">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <a routerLink="/collections" class="mr-5 float-right mtBtnLink mtBtnDark btn text-light">
+          <span class="lnr lnr-chevron-left"></span> Go back
+        </a>
+      </div>
+    </div>
+    <div class="row mb-3 justify-content-center">
+      <div class="col-6 text-light" *ngIf="$product | async">
+        <p class="font-weight-bolder">
+          <a class="mtBtnLink text-light" [routerLink]="['/collections']" [queryParams]="{
+            product: ($product | async).product
+          }">
+            {{($product | async).product}}
+          </a>
+          <span class="lnr lnr-chevron-right"></span>
+          <a class="mtBtnLink text-light" [routerLink]="['/collections']" [queryParams]="{
+            product: ($product | async).product,
+            category: ($product | async).category
+          }">
+            {{($product | async).category}}
+          </a>
+          <span class="lnr lnr-chevron-right"></span>
+          <a class="mtBtnLink text-light" [routerLink]="['/collections']" [queryParams]="{
+            product: ($product | async).product,
+            category: ($product | async).category,
+            type: ($product | async).type
+          }">
+            {{($product | async).type}}
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="row" *ngIf="$product | async">
+      <div class="col-12">
+        <p>{{($product | async).specification}}</p>
+      </div>
+    </div>
+    <div class="row" *ngIf="$relevantProducts | async">
+      <div class="col-12 rounded" style="background-color: #3b3b3b">
+        <h3 class="text-light mtFontRoboto m-0 p-2">Other related products</h3>
+      </div>
+      <div class="col-lg-4 col-md-4 col-xl-4 col-sm-6" *ngFor="let product of $relevantProducts | async">
+        <div class="product mt-3 p-2 d-flex flex-column justify-content-end">
+          <div
+            [routerLink]="['/collections', product.pin]"
+            (click)="onFetchObject(product.pin.toString())"
+            class="image"
+               [ngStyle]='{
+            background: "url(" + product.image_url + ") no-repeat",
+            minHeight: "350px",
+            backgroundPositionX: "center",
+            backgroundPositionY: "center",
+            backgroundSize: "300px"}
+              '></div>
+          <div class="height" style="min-height: 8px"></div>
+          <p class="small font-weight-bold text-center text-light">PID.{{product.pin}}</p>
+          <p class="small text-center text-light">{{product.product}} - {{product.category === "KidBoy" ? "Kid's Boy's" : (product.category == "KidGirl" ? "Kid's Girl's" : product.category)}} - {{product.type}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

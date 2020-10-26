@@ -32,6 +32,7 @@ import {NgxsLoggerPluginModule} from "@ngxs/logger-plugin";
 import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 import { ImageShowComponent } from './products/image-show/image-show.component';
 import {FormsModule} from "@angular/forms";
+import { ProductShowComponent } from './products/product-show/product-show.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {FormsModule} from "@angular/forms";
     ShowcaseComponent,
     ProductsComponent,
     ContactComponent,
-    ImageShowComponent
+    ImageShowComponent,
+    ProductShowComponent
   ],
   imports: [
     BrowserModule,

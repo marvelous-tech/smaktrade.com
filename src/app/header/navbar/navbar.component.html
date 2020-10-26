@@ -7,15 +7,37 @@
             <a href (click)="false" class="nav-link text-light p-0 m-0 mtDropdownNoDropIcon"
                [ngStyle]="{lineHeight: navBarHeight}" ngbDropdownToggle>
               <span class="mtIcon lnr lnr-menu"></span>
-              ALL CATEGORIES</a>
+              PRODUCT CATEGORIES</a>
             <div ngbDropdownMenu class="shadow-lg mtNavBarDropdown animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem>Sweater</a>
-              <a ngbDropdownItem>Knit</a>
-              <a ngbDropdownItem>Woven</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+              >All</a>
               <div class="dropdown-divider"></div>
-              <a ngbDropdownItem>Men's</a>
-              <a ngbDropdownItem>Women's</a>
-              <a ngbDropdownItem>Kid's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{product: 'Sweater'}"
+              >Sweater</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{product: 'Knit'}"
+              >Knit</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{product: 'Woven'}"
+              >Woven</a>
+              <div class="dropdown-divider"></div>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Men'}"
+              >Men's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{category: 'Women'}"
+              >Women's</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/collections']"
+                 [queryParams]="{search: 'Kid'}"
+              >Kid's</a>
             </div>
           </li>
           <li class="nav-item border-right mtBorder">
@@ -25,6 +47,10 @@
           <li class="nav-item border-right mtBorder">
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/collections"
                routerLinkActive="active">COLLECTIONS</a>
+          </li>
+          <li class="nav-item border-right mtBorder">
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}"
+               routerLinkActive="active">COMPANY PROFILE</a>
           </li>
           <li class="nav-item border-right mtBorder">
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">ABOUT</a>

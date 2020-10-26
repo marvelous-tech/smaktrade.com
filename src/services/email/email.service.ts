@@ -13,7 +13,7 @@ export class EmailService {
   sendMailToClient(payload: {name: string, email: string, phone: string, message: string}): Observable<Email> {
     let email: SendEmail = {
       from_email: "nazrul@smaktrade.com",
-      from_name: "Nazrul Islam",
+      from_name: "WEBSITE",
       to_email: "nazrul@smaktrade.com",
       to_name: "Nazrul Islam",
       subject: "From Website Contact of " + payload.name,
@@ -22,7 +22,7 @@ export class EmailService {
         "Email   :\t" + payload.email + "\n" +
         "Phone   :\t" + payload.phone + "\n" +
         "Message :\n" + payload.message + "\n\n\n" +
-        "This is an automated email\n\nThank you\nDeveloped by Fahim Al Islam",
+        "This is an automated email, developed by Fahim.",
       html_body: "<h2><span style=\"color: #3598db;\">Contact form of&nbsp;<em>SMAKTRADE.COM</em></span></h2>\n" +
         "<table style=\"border-collapse: collapse; width: 100%; border-style: solid; float: left; height: 120px;\" border=\"1\" cellpadding=\"13\">\n" +
         "<tbody>\n" +
@@ -46,9 +46,7 @@ export class EmailService {
         "</tbody>\n" +
         "</table>" +
         "<p>&nbsp;</p>\n" +
-        "<p><em>This is an automated email<br /></em></p>\n" +
-        "<p><em>Thank you</em></p>\n" +
-        "<p><em>Developed by Fahim Al Islam</em></p>"
+        "<p><em><span style=\"font-size: 10pt; color: #95a5a6;\">This is an automated email, developed by Fahim</span></em>\n"
     };
     return this._http.post<Email>('https://garment-products.garlic.marvelous-tech.com/api/email/send/', email, {
       headers: {

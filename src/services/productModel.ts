@@ -5,4 +5,5 @@ export interface Product {
   category: string;
   type: string;
   image_url: string;
+  specification: string;
 }
