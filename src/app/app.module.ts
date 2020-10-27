@@ -34,6 +34,7 @@ import { ProductShowComponent } from './products/product-show/product-show.compo
 import { AboutComponent } from './about/about.component';
 import { AboutTextComponent } from './about/about-text/about-text.component';
 import { NavbarSmallScreenComponent } from './header/navbar/navbar-small-screen/navbar-small-screen.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { NavbarSmallScreenComponent } from './header/navbar/navbar-small-screen/
     ProductShowComponent,
     AboutComponent,
     AboutTextComponent,
-    NavbarSmallScreenComponent
+    NavbarSmallScreenComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Menu</a>
+  <a class="navbar-brand" href="#">MENU</a>
   <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,55 +8,62 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item dropdown">
-        <a  aria-labelledby="navbarDropdown" (click)="toggleDropdown()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Product Categories
+        <a aria-labelledby="navbarDropdown" (click)="toggleDropdown()" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          PRODUCT CATEGORIES
         </a>
         <div class="dropdown-menu"  [ngClass]="{'show': dropdownOpen}">
           <a ngbDropdownItem
              [routerLink]="['/collections']"
+             (click)="toggleNavbar()"
           >All</a>
           <div class="dropdown-divider"></div>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{product: 'Sweater'}"
+             (click)="toggleNavbar()"
           >Sweater</a>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{product: 'Knit'}"
+             (click)="toggleNavbar()"
           >Knit</a>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{product: 'Woven'}"
+             (click)="toggleNavbar()"
           >Woven</a>
           <div class="dropdown-divider"></div>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{category: 'Men'}"
+             (click)="toggleNavbar()"
           >Men's</a>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{category: 'Women'}"
+             (click)="toggleDropdown()"
           >Women's</a>
           <a ngbDropdownItem
              [routerLink]="['/collections']"
              [queryParams]="{search: 'Kid'}"
+             (click)="toggleNavbar()"
           >Kid's</a>
         </div>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/">Home</a>
+      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">HOME</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/collections">Collections</a>
+      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/collections">COLLECTIONS</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/">Company Profile</a>
+      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/profile">COMPANY PROFILE</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/about">About</a>
+      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">ABOUT</a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/contact">Contact</a>
+      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact">CONTACT</a>
       </li>
     </ul>
   </div>
