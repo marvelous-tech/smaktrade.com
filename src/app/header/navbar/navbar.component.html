@@ -1,8 +1,11 @@
-<section class="text-light" id="mtNavBarBg">
+<div class="d-md-none">
+  <app-navbar-small-screen></app-navbar-small-screen>
+</div>
+<section class="text-light d-none d-md-block" id="mtNavBarBg">
   <div class="container">
     <div class="row font-weight-bolder">
-      <div class="col">
-        <ul class="nav nav-fill" [ngStyle]="{height: navBarHeight}">
+      <div class="col-lg-12">
+        <ul class="nav nav-fill justify-content-center flex-sm-column" [ngStyle]="{height: navBarHeight}">
           <li ngbDropdown class="nav-item border-left border-right mtBorder">
             <a href (click)="false" class="nav-link text-light p-0 m-0 mtDropdownNoDropIcon"
                [ngStyle]="{lineHeight: navBarHeight}" ngbDropdownToggle>
@@ -53,7 +56,7 @@
                routerLinkActive="active">COMPANY PROFILE</a>
           </li>
           <li class="nav-item border-right mtBorder">
-            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" href="#">ABOUT</a>
+            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/about">ABOUT</a>
           </li>
           <li class="nav-item border-right mtBorder">
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/contact"

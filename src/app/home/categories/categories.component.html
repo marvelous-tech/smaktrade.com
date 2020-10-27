@@ -5,73 +5,18 @@
 </div>
 <div class="container">
   <div class="row my-3">
-    <div class="col-4">
-      <div class="card"><img class="card__img" src="https://hw-media.herworld.com/public/2017/12/video/76783649_m.jpg" alt="Desert">
+    <div class="col-lg-4 col-mg-4 col-sm-12 col-xl-4" *ngFor="let category of categories;">
+      <div class="card"><img class="card__img" [src]="category.img" alt="Canyons">
         <div class="card__content">
-          <h4 class="card__header">Sweater</h4>
-          <div ngbDropdown>
-            <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic1" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Men', product: 'Sweater'}"
-              >Men's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Women', product: 'Sweater'}"
-              >Women's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{search: 'Kid', product: 'Sweater'}"
-              >Kid's</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card"><img class="card__img" src="https://i.pinimg.com/originals/8e/a2/5b/8ea25b0a99f3a12dc230768acc9a95a5.jpg" alt="Snowy Mountains">
-        <div class="card__content">
-          <h4 class="card__header">Knit</h4>
-          <div ngbDropdown>
-            <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic2" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
-            <div ngbDropdownMenu aria-labelledby="dropdownBasic2" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Men', product: 'Knit'}"
-              >Men's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Women', product: 'Knit'}"
-              >Women's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{search: 'Kid', product: 'Knit'}"
-              >Kid's</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-4">
-      <div class="card"><img class="card__img" src="https://eterna24.com.ua/wp-content/uploads/2016/06/kak-slozhit-rubashku.jpg" alt="Canyons">
-        <div class="card__content">
-          <h4 class="card__header">Woven</h4>
+          <h4 class="card__header">{{category.name}}</h4>
           <div ngbDropdown>
             <button class="mtBtn btn-block mtDropdownNoDropIcon" id="dropdownBasic3" ngbDropdownToggle>Explore  <span>&rarr;</span></button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic3" class="mtNavBarDropdown shadow-lg  animate__animated animate__fadeIn animate__faster">
               <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Men', product: 'Woven'}"
-              >Men's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{category: 'Women', product: 'Woven'}"
-              >Women's</a>
-              <a ngbDropdownItem
-                 [routerLink]="['/collections']"
-                 [queryParams]="{search: 'Kid', product: 'Woven'}"
-              >Kid's</a>
+                 [routerLink]="link.routerLink"
+                 [queryParams]="link.queryParams"
+                 *ngFor="let link of category.links"
+              >{{link.name}}</a>
             </div>
           </div>
         </div>

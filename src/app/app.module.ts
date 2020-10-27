@@ -18,7 +18,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { WomenRoomComponent } from './home/women-room/women-room.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MenRoomComponent } from './home/men-room/men-room.component';
-import { CompnayFeaturesComponent } from './home/compnay-features/compnay-features.component';
+import { CompnayFeaturesComponent } from './about/compnay-features/compnay-features.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { DeveloperComponent } from './developer/developer.component';
 import { ContactFormComponent } from './home/contact-form/contact-form.component';
@@ -28,11 +28,12 @@ import { ContactComponent } from './contact/contact.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgxsModule} from "@ngxs/store";
 import {ProductState} from "../store/states/productState";
-import {NgxsLoggerPluginModule} from "@ngxs/logger-plugin";
-import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 import { ImageShowComponent } from './products/image-show/image-show.component';
 import {FormsModule} from "@angular/forms";
 import { ProductShowComponent } from './products/product-show/product-show.component';
+import { AboutComponent } from './about/about.component';
+import { AboutTextComponent } from './about/about-text/about-text.component';
+import { NavbarSmallScreenComponent } from './header/navbar/navbar-small-screen/navbar-small-screen.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,10 @@ import { ProductShowComponent } from './products/product-show/product-show.compo
     ProductsComponent,
     ContactComponent,
     ImageShowComponent,
-    ProductShowComponent
+    ProductShowComponent,
+    AboutComponent,
+    AboutTextComponent,
+    NavbarSmallScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -70,9 +74,7 @@ import { ProductShowComponent } from './products/product-show/product-show.compo
     NgxsModule.forRoot(
       [ProductState],
       {developmentMode: false}
-    ),
-    NgxsLoggerPluginModule.forRoot(),
-    NgxsReduxDevtoolsPluginModule.forRoot()
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

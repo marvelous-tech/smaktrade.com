@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Menu</a>
+  <button class="navbar-toggler" (click)="toggleNavbar()" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngClass]="{'show': navbarOpen}" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item dropdown">
+        <a  aria-labelledby="navbarDropdown" (click)="toggleDropdown()" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Product Categories
+        </a>
+        <div class="dropdown-menu"  [ngClass]="{'show': dropdownOpen}">
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+          >All</a>
+          <div class="dropdown-divider"></div>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{product: 'Sweater'}"
+          >Sweater</a>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{product: 'Knit'}"
+          >Knit</a>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{product: 'Woven'}"
+          >Woven</a>
+          <div class="dropdown-divider"></div>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{category: 'Men'}"
+          >Men's</a>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{category: 'Women'}"
+          >Women's</a>
+          <a ngbDropdownItem
+             [routerLink]="['/collections']"
+             [queryParams]="{search: 'Kid'}"
+          >Kid's</a>
+        </div>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/collections">Collections</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Company Profile</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
