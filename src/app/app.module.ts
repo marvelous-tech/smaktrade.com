@@ -35,6 +35,9 @@ import { AboutComponent } from './about/about.component';
 import { AboutTextComponent } from './about/about-text/about-text.component';
 import { NavbarSmallScreenComponent } from './header/navbar/navbar-small-screen/navbar-small-screen.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ColorsComponent } from './colors/colors.component';
+import { TcxComponent } from './colors/tcx/tcx.component';
+import {ColorTCXState} from "../store/states/colorTCXState";
 
 @NgModule({
   declarations: [
@@ -63,7 +66,9 @@ import { ProfileComponent } from './profile/profile.component';
     AboutComponent,
     AboutTextComponent,
     NavbarSmallScreenComponent,
-    ProfileComponent
+    ProfileComponent,
+    ColorsComponent,
+    TcxComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +79,7 @@ import { ProfileComponent } from './profile/profile.component';
     CarouselModule,
     HttpClientModule,
     NgxsModule.forRoot(
-      [ProductState],
+      [ProductState, ColorTCXState],
       {developmentMode: false}
     )
   ],

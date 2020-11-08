@@ -6,6 +6,7 @@ import {ContactComponent} from "./contact/contact.component";
 import {ProductShowComponent} from "./products/product-show/product-show.component";
 import {AboutComponent} from "./about/about.component";
 import {ProfileComponent} from "./profile/profile.component";
+import {ColorsComponent} from "./colors/colors.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'collections/:pin', component: ProductShowComponent},
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'colors', component: ColorsComponent },
   { path: '**', redirectTo: '/home' }
 ];
 

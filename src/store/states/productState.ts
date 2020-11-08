@@ -55,7 +55,6 @@ export class ProductState {
   @Action(FetchProductObjectAction)
   fetchProductObject(ctx: StateContext<ProductStateModel>, action: FetchProductObjectAction): Observable<Product> {
     const previousState = ctx.getState();
-    console.log(action.payload);
     return this._productService.fetchProduct(action.payload.pin).pipe(
       tap((object) => {
         const state = produce(previousState, (draft) => {

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row py-3">
+    <div class="col-lg-12 search-box">
+      <input type="text" name="keyword" (keyup)="onKeywordSearch($event)" class="form-control" placeholder="Search with HEXs, RGBs, TCX names or Color Names">
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-6 col-6" *ngFor="let color of colorTCXs;">
+      <div class="py-3">
+        <div class="color border rounded-lg">
+          <div class="code rounded-top" [style]="{
+          minHeight: '200px',
+          backgroundColor: '#' + color.hex
+        }"></div>
+          <div class="data p-2">
+            <i class="text-primary small float-left">{{color.positionInBook}}</i>
+            <i class="text-primary small float-right">#{{color.hex}}</i><br>
+            <strong class="font-weight-bolder my-1">{{color.code}}</strong><br>
+            <strong class="mb-1" style="font-size: 15px">{{color.name | titlecase}}</strong><br>
+            <i class="text-danger small">RGB({{color.rgb.r}}, {{color.rgb.g}}, {{color.rgb.b}})</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
