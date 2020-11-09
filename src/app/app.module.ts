@@ -38,6 +38,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { ColorsComponent } from './colors/colors.component';
 import { TcxComponent } from './colors/tcx/tcx.component';
 import {ColorTCXState} from "../store/states/colorTCXState";
+import { SweaterComponent } from './profile/sweater/sweater.component';
+import { KnitComponent } from './profile/knit/knit.component';
+import { WovenComponent } from './profile/woven/woven.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import {ColorTCXState} from "../store/states/colorTCXState";
     NavbarSmallScreenComponent,
     ProfileComponent,
     ColorsComponent,
-    TcxComponent
+    TcxComponent,
+    SweaterComponent,
+    KnitComponent,
+    WovenComponent
   ],
   imports: [
     BrowserModule,

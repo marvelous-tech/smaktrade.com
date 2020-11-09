@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {SiteDataService} from "../../services/sitedata/site-data.service";
 import {Observable} from "rxjs";
-import {SiteDataModels} from "../../services/site-data.model";
+import {SiteDataModels} from "../../../services/site-data.model";
+import {SiteDataService} from "../../../services/sitedata/site-data.service";
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-knit',
+  templateUrl: './knit.component.html',
+  styleUrls: ['./knit.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class KnitComponent implements OnInit {
+
   profile_1: Observable<SiteDataModels>;
 
   constructor(private _siteDateService: SiteDataService) { }

@@ -51,9 +51,22 @@
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/collections"
                routerLinkActive="active">COLLECTIONS</a>
           </li>
-          <li class="nav-item border-right mtBorder">
-            <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}"
-               routerLinkActive="active" routerLink="/profile">COMPANY PROFILE</a>
+          <li ngbDropdown class="nav-item border-left border-right mtBorder">
+            <a href (click)="false" class="nav-link text-light p-0 m-0 mtDropdownNoDropIcon"
+               [ngStyle]="{lineHeight: navBarHeight}" ngbDropdownToggle>
+              <span class="mtIcon lnr lnr-menu"></span>
+              COMPANY PROFILES</a>
+            <div ngbDropdownMenu class="shadow-lg mtNavBarDropdown animate__animated animate__fadeIn animate__faster">
+              <a ngbDropdownItem
+                 [routerLink]="['/profile/sweater']"
+              >SWEATER</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/profile/knit']"
+              >KNIT</a>
+              <a ngbDropdownItem
+                 [routerLink]="['/profile/woven']"
+              >WOVEN</a>
+            </div>
           </li>
           <li class="nav-item border-right mtBorder">
             <a class="nav-link text-light p-0 m-0" [ngStyle]="{lineHeight: navBarHeight}" routerLink="/about">ABOUT</a>

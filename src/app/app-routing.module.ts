@@ -7,6 +7,9 @@ import {ProductShowComponent} from "./products/product-show/product-show.compone
 import {AboutComponent} from "./about/about.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {ColorsComponent} from "./colors/colors.component";
+import {SweaterComponent} from "./profile/sweater/sweater.component";
+import {KnitComponent} from "./profile/knit/knit.component";
+import {WovenComponent} from "./profile/woven/woven.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,7 +17,11 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'collections/:pin', component: ProductShowComponent},
   { path: 'about', component: AboutComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'profile', children: [
+      { path: 'sweater', component: SweaterComponent },
+      { path: 'knit', component: KnitComponent },
+      { path: 'woven', component: WovenComponent },
+    ] },
   { path: 'colors', component: ColorsComponent },
   { path: '**', redirectTo: '/home' }
 ];

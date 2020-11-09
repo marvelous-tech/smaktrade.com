@@ -56,8 +56,24 @@
       <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/collections">COLLECTIONS</a>
       </li>
-      <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/profile">COMPANY PROFILE</a>
+      <li class="nav-item dropdown">
+        <a aria-labelledby="navbarDropdown" (click)="toggleDropdown()" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          COMPANY PROFILES
+        </a>
+        <div class="dropdown-menu"  [ngClass]="{'show': dropdownOpen}">
+          <a ngbDropdownItem
+             [routerLink]="['/profile/sweater']"
+             (click)="toggleNavbar()"
+          >SWEATER</a>
+          <a ngbDropdownItem
+             [routerLink]="['/profile/knit']"
+             (click)="toggleNavbar()"
+          >KNIT</a>
+          <a ngbDropdownItem
+             [routerLink]="['/profile/woven']"
+             (click)="toggleNavbar()"
+          >WOVEN</a>
+        </div>
       </li>
       <li (click)="toggleNavbar()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" routerLink="/about">ABOUT</a>
